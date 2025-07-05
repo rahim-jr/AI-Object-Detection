@@ -9,7 +9,7 @@ This is a web AI object detection. You can use it in your web browser. This web 
 - ✅ Optimized for performance with `requestAnimationFrame`
 
 ## 🖼️ Images
-<img src="https://i.ibb.co/99zKjH4T/preview-combined.jpg" alt="preview-combined" width="100%">
+![preview-combined](https://i.ibb.co/99zKjH4T/preview-combined.jpg)
 
 
 
