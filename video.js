@@ -1,6 +1,9 @@
 document.getElementById("ai").addEventListener("change", toggleAi)
 document.getElementById("fps").addEventListener("input", changeFps)
 
+const switchCameraButton = document.getElementById("switchCamera");
+switchCameraButton.addEventListener("click", switchCamera);
+
 const video = document.getElementById("video");
 const c1 = document.getElementById('c1');
 const ctx1 = c1.getContext('2d');
@@ -84,6 +87,22 @@ function toggleAi() {
 
 function changeFps() {
     fps = 1000 / document.getElementById("fps").value;
+}
+
+function switchCamera() {
+    if (cameraAvailable) {
+        video.srcObject.getTracks().forEach(track => {
+            track.stop();
+        });
+    }
+    cameraAvailable = false;
+    if (facingMode === "environment") {
+        facingMode = "user";
+    } else {
+        facingMode = "environment";
+    }
+    constraints.video.facingMode = facingMode;
+    camera();
 }
 
 function ai() {
