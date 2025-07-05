@@ -5,7 +5,8 @@ This is a web AI object detection. You can use it in your web browser. This web 
 ## ⚙️ Features
 
 - ✅ Toggle switch to turn AI on or off
-- ✅ Range slider to control frame rate
+- ✅ Switch between front and back cameras
+- ✅ Optimized for performance with `requestAnimationFrame`
 
 ## 🖼️ Images
 <a href="https://ibb.co/JCNgfJr"><img src="https://i.ibb.co/3kwQDZS/preview-combined.jpg" alt="preview-combined" width="100%"></a>
