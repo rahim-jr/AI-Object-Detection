@@ -1,5 +1,4 @@
 document.getElementById("ai").addEventListener("change", toggleAi)
-document.getElementById("fps").addEventListener("input", changeFps)
 
 const switchCameraButton = document.getElementById("switchCamera");
 switchCameraButton.addEventListener("click", switchCamera);
@@ -9,7 +8,6 @@ const c1 = document.getElementById('c1');
 const ctx1 = c1.getContext('2d');
 var cameraAvailable = false;
 var aiEnabled = false;
-var fps = 16;
 
 /* Setting up the constraint */
 var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
@@ -41,7 +39,7 @@ function camera() {
 }
 
 window.onload = function () {
-    timerCallback();
+    requestAnimationFrame(timerCallback);
 }
 
 function timerCallback() {
@@ -52,7 +50,7 @@ function timerCallback() {
             ai();
         }
     }
-    setTimeout(timerCallback, fps);
+    requestAnimationFrame(timerCallback);
 }
 
 function isReady() {
@@ -83,10 +81,6 @@ function setResolution() {
 
 function toggleAi() {
     aiEnabled = document.getElementById("ai").checked;
-}
-
-function changeFps() {
-    fps = 1000 / document.getElementById("fps").value;
 }
 
 function switchCamera() {
